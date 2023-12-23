@@ -1,0 +1,6 @@
+package bai07;
+
+public abstract class Employee {
+	protected int thePayRollNumber;
+	
+}

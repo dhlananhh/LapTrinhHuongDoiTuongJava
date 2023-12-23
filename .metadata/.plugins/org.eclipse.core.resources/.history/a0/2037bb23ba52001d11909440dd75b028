@@ -1,0 +1,5 @@
+package bai07;
+
+public abstract class Employee {
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;bai06.QuanLyDSPhongHoc&apos; to &apos;DanhSachPhongHoc&apos;&#x0D;&#x0A;- Original project: &apos;Module04&apos;&#x0D;&#x0A;- Original element: &apos;bai06.QuanLyDSPhongHoc&apos;&#x0D;&#x0A;- Renamed element: &apos;bai06.DanhSachPhongHoc&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;QuanLyDSPhongHoc&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;bai06{QuanLyDSPhongHoc.java[QuanLyDSPhongHoc" matchStrategy="1" name="DanhSachPhongHoc" qualified="false" references="true" similarDeclarations="false" stamp="1666585341676" textual="false" version="1.0"/>
+</session>

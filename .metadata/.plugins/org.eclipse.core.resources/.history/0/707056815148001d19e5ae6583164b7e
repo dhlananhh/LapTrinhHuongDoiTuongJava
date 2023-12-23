@@ -1,0 +1,83 @@
+package bai03;
+
+import java.util.ArrayList;
+import java.util.stream.DoubleStream;
+
+public class QuanLyGiaoDich {
+	private ArrayList<GiaoDich> ds;
+
+	public QuanLyGiaoDich() {
+		ds = new ArrayList<GiaoDich>();
+	}
+	
+	public ArrayList<GiaoDich> getDs() {
+		return ds;
+	}
+
+	public void setDs(ArrayList<GiaoDich> ds) {
+		this.ds = ds;
+	}
+	
+	public void addGiaoDich (GiaoDich gd) {
+		this.ds.add(gd);
+	}
+	
+	public int getTongSoLuong() {
+		int sum = 0;
+		for (GiaoDich gd: this.ds)
+			sum += gd.getSoLuong();
+		return sum;
+	}
+	
+	public double getTongThanhTien() {
+		double sum = 0;
+		for (GiaoDich gd: this.ds)
+			sum += gd.getThanhTien();
+		return sum;
+	}
+	
+	public int getSoLuongGDVang() {
+		int SLGDVang = 0;
+		for (GiaoDich gdv: this.ds)
+			if (gdv instanceof GiaoDichVang)
+				SLGDVang += gdv.getSoLuong();
+		return SLGDVang;
+	}
+	
+	public int getSoLuongGDTienTe() {
+		int SLGDTT = 0;
+		for (GiaoDich gdtt: this.ds)
+			if (gdtt instanceof GiaoDichTienTe)
+				SLGDTT += gdtt.getSoLuong();
+		return SLGDTT;
+	}
+	
+	public double getTBThanhTienGDTienTe() {
+		double TTGDTT = 1;
+		int count = 0;
+		for (GiaoDich gdtt: this.ds)
+			if (gdtt instanceof GiaoDichTienTe) {
+				TTGDTT += gdtt.getThanhTien();
+				count++;
+			}
+				
+		return TTGDTT / count;
+	}
+	
+	public QuanLyGiaoDich getGDCoDonGiaTren1Ty() {
+		QuanLyGiaoDich kq = new QuanLyGiaoDich();
+		for (GiaoDich gd: this.ds)
+	}
+	
+//	public double getTBThanhTienGDTT() {
+//		return DoubleStream.of(getThanhTienGDTienTe()).average().getAsDouble();
+//	}
+	
+	@Override
+	public String toString() {
+		String str = "";
+		for (GiaoDich gd: this.ds)
+			str += gd.toString() + "\n";
+		return str;
+	}
+}

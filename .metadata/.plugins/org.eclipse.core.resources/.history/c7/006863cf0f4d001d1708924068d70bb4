@@ -1,0 +1,49 @@
+package bai06;
+
+import java.util.Scanner;
+
+public class Tester {
+	private static Scanner scanner = new Scanner(System.in);
+	
+	public static void inputHang (HangHoa hh) {
+		scanner.nextLine();
+		System.out.println("Nhap vao ma hang: ");
+		hh.setMaHang(scanner.nextLine());
+		
+		scanner.nextLine();
+		System.out.println("Nhap vao ten hang: ");
+		hh.setTenHang(scanner.nextLine());
+		
+		System.out.println("Nhap vao don gia: ");
+		hh.setDonGia(scanner.nextDouble());
+		
+		System.out.println("Nhap vao so luong ton: ");
+		hh.setSoLuongTon(scanner.nextInt());
+	}
+	
+	public static void main(String[] args) {
+		DanhSachHangHoa ql = new DanhSachHangHoa();
+		HangHoa hh;
+		boolean flag = true;
+				
+		do {
+			System.out.println("MENU QUAN LY HANG HOA");
+			System.out.println("1. Nhap danh sach thong tin hang hoa");
+			System.out.println("2. Lay thong tin toan bo danh sach cac hang hoa");
+			System.out.println("3. Tim kiem hang hoa khi biet ma hang");
+			System.out.println("4. Sap xep hang hoa theo ten hang tang dan");
+			System.out.println("5. Sap xep hang hoa theo so luong ton giam dan");
+			System.out.println("6. Lay thong tin cac hang thuc pham kho ban");
+			System.out.println("7. Xoa hang hoa khi biet ma hang");
+			System.out.println("8. Sua thong tin don gia cua hang hoa khi biet ma hang");
+			System.out.println("9. Thoat");
+			System.out.println("Nhap vao lua chon cua ban: ");
+			int c = scanner.nextInt();
+			
+			switch (c) {
+				case 1:
+					System.out.println();
+			}
+		} while (flag);
+	}
+}

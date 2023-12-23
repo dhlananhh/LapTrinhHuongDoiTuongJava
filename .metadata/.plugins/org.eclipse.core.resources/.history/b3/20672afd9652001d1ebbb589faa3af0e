@@ -1,0 +1,61 @@
+package bai06;
+
+import java.util.List;
+import java.util.ArrayList;
+
+
+public class QuanLyDSPhongHoc {
+	private List<PhongHoc> list;
+	
+	
+	public QuanLyDSPhongHoc() {
+		list = new ArrayList<PhongHoc>();
+	}
+	
+	
+	public boolean themPhongHoc (PhongHoc a) {
+		if (list.contains(a))
+			return false;
+		list.add(a);
+		return true;
+	}
+	
+	
+	//lay thong tin danh sach phong hoc
+	@Override
+	public String toString() {
+		String s = "";
+		for (PhongHoc phongHoc : list)
+			s += phongHoc + "\n";
+		return s;
+	}
+		
+	
+	//tim va xuat thong tin phong hoc khi biet ma
+	public String timPhongHoc (String ma) {
+		for (int i=0; i < list.size(); i++) {
+			if (list.get(i).getMaPhong().equals(ma))
+				return list.get(i).toString();
+		}
+		return String.format("khong tim thay");
+	}
+	
+	
+	//xoa phong hoc theo ma
+	public boolean xoa (String ma) {
+		
+	}
+		
+	
+	//lay thong tin danh sach phong hoc dat chuan
+	public List <PhongHoc> layDSPhongHocDatChuan() {
+		List<PhongHoc> ds = new ArrayList<PhongHoc>();
+		
+		for (PhongHoc phongHoc : list) {
+			if (phongHoc.danhGiaPhongHoc().equalsIgnoreCase("Phong hoc dat chuan"))
+				ds.add(phongHoc);
+		}
+		
+		return ds;
+	}
+}

@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+E:\LAP TRINH JAVA\OOP\21087481_Duong Hoang Lan Anh\.metadata\.plugins\org.eclipse.jdt.core
+2785074807.index
+2921994422.index
+1076132250.index
+1865797976.index
+3728796729.index

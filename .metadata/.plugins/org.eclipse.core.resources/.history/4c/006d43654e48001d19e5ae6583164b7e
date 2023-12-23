@@ -1,0 +1,52 @@
+package bai03;
+
+import java.text.DecimalFormat;
+import java.time.LocalDate;
+
+public class GiaoDichTienTe extends GiaoDich {
+	private String loaiTienTe;
+	private double tiGia;
+	
+	public GiaoDichTienTe() {
+		super();
+		loaiTienTe = "chua xac dinh";
+		tiGia = 0;
+	}
+	public GiaoDichTienTe(String maGiaoDich, LocalDate ngayGiaoDich, double donGia, int soLuong, String loaiTienTe, double tiGia) {
+		super(maGiaoDich, ngayGiaoDich, donGia, soLuong);
+		setLoaiTienTe(loaiTienTe);
+		setDonGia(donGia);
+	}
+	
+	@Override
+	public double getThanhTien() {
+		String kw = getLoaiTienTe();
+		double tien = 1;
+		if (getLoaiTienTe().contains("USD") ||
+			getLoaiTienTe().contains("Euro"))
+			tien = getSoLuong() * getDonGia() * getTiGia();
+		if (getLoaiTienTe().contains("VND"))
+			tien = getSoLuong() * getDonGia();
+		return tien;
+	}
+	
+	@Override
+	public String toString() {
+		DecimalFormat df = new DecimalFormat("#,##0" + " VND");
+		return "GD tien te" + super.toString() + String.format("\tLoai tien te: %s \tTi gia: %s", loaiTienTe, df.format(tiGia));
+	}
+	
+	public String getLoaiTienTe() {
+		return loaiTienTe;
+	}
+	
+	public void setLoaiTienTe(String loaiTienTe) {
+		this.loaiTienTe = loaiTienTe;
+	}
+	public double getTiGia() {
+		return tiGia;
+	}
+	public void setTiGia(double tiGia) {
+		this.tiGia = tiGia;
+	}
+}

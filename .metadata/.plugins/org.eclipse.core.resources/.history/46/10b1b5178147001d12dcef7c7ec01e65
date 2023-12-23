@@ -1,0 +1,27 @@
+package bai01;
+
+import java.text.DecimalFormat;
+
+public class Tester {
+	public static void main(String[] args) throws Exception {
+		DecimalFormat df = new DecimalFormat("#,##0" + " VND");
+		try {
+		DanhSachChuyenXe ds = new DanhSachChuyenXe();
+		ChuyenXeNoiThanh cx1 = new ChuyenXeNoiThanh(1, "Nguyen Van A", "1234AB", 750, 100, 50);
+		ChuyenXeNoiThanh cx2 = new ChuyenXeNoiThanh(2,"Tran Trong B", "234BC", 800, 300, 100);
+		ChuyenXeNgoaiThanh cx3 = new ChuyenXeNgoaiThanh(3, "Pham Ngoc C", "345DEF", 1000, "Hai Phong", 1);
+		ChuyenXeNgoaiThanh cx4 = new ChuyenXeNgoaiThanh(4, "Le Hoang D", "456GHJ", 2000, "Hoi An", 2); 
+		ds.addChuyenXe(cx1);
+		ds.addChuyenXe(cx2);
+		ds.addChuyenXe(cx3);
+		ds.addChuyenXe(cx4);
+				
+		System.out.println(ds);
+		System.out.println("Tong doanh thu cua cac chuyen xe la: " + df.format(ds.getTongDoanhThu()));
+		System.out.println("Tong doanh thu cua chuyen xe noi thanh la: " + ds.getTongDoanhThuNoiThanh());
+		System.out.println("Tong doanh thu cua cac chuyen xe ngoai thanh la: " + );
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+}

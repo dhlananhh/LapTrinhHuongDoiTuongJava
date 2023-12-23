@@ -1,0 +1,37 @@
+package bai03;
+
+import java.text.DecimalFormat;
+import java.time.LocalDate;
+
+public class Tester {
+	public static void main(String[] args) {
+		DecimalFormat df = new DecimalFormat("#,##0 VND");
+		
+		try {
+			QuanLyGiaoDich ql = new QuanLyGiaoDich();
+			QuanLyGiaoDich kq = new QuanLyGiaoDich();
+			GiaoDichVang gdv1 = new GiaoDichVang("GDV001", LocalDate.of(2022, 10, 30), 9000000, 1, "Vang 9999");
+			GiaoDichVang gdv2 = new GiaoDichVang("GDV002", LocalDate.of(2022, 11, 11), 5000000, 1, "Vang 999");
+			GiaoDichVang gdv3 = new GiaoDichVang("GDV003", LocalDate.of(2022, 12, 12), 7000000, 1, "Vang 10K");
+			GiaoDichTienTe gdtt1 = new GiaoDichTienTe("GDTT001", LocalDate.of(2023, 1, 1), 0, 10, "VND", 0);
+			GiaoDichTienTe gdtt2 = new GiaoDichTienTe("GDTT002", LocalDate.of(2023, 6, 6), 20000, 10, "Euro", 30000);
+			GiaoDichTienTe gdtt3 = new GiaoDichTienTe("GDTT003", LocalDate.of(2022, 9, 23), 10000, 20, "USD", 25000);
+			ql.addGiaoDich(gdv1);
+			ql.addGiaoDich(gdv2);
+			ql.addGiaoDich(gdv3);
+			ql.addGiaoDich(gdtt1);
+			ql.addGiaoDich(gdtt2);
+			ql.addGiaoDich(gdtt3);
+			System.out.println(ql);
+			System.out.println("So luong giao dich vang la: " + ql.getSoLuongGDVang());
+			System.out.println("So luong giao dich tien te la: " + ql.getSoLuongGDTienTe());
+			System.out.println("Trung binh thanh tien cua giao dich tien te la: " + df.format(ql.getTBThanhTienGDTienTe()));
+			System.out.println(ql);
+			System.out.println("Cac giao dich co don gia > 1 ty la: ");
+			kq = ql.getGDCoDonGiaTren1Ty();
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+}
